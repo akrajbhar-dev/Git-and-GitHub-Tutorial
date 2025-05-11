@@ -23,6 +23,7 @@ Git is used for taking history of changes of our code. It also helps us for coll
 12. `git config --global core.editor "code --wait`:- This command will change the Git's default code editor from VIM to VS Code.
 	**code is command to open VS Code, And code \<file\> will create 'file' if not existed and open up the 'file' with VS Code.**  
 	**Git open up code editor, When you did not type message while committing and when solving conflicts.**
+13. `git branch`:- This command displays the current branch where we are working on.
 # Terminologies
 1. Repositories :- Same meaning as folder or directory, Specifically where we store our code.
 2. Git Repositories :- A repo which have .git(files/folders starting with . are hidden) folder inside it, is called a Git Repositories.
@@ -34,3 +35,9 @@ Git is used for taking history of changes of our code. It also helps us for coll
 ****
 **Git does not track empty folders, If we want the empty folders are also being tracked by Git then we add `.gitkeep` file inside those empty folders.**
 ****
+# Head in Git
+The head is a pointer which points towards the current branch on which we are working.
+**There are multiple ways to know the current branch.**
+1. By `git branch` command.
+2. By going to .git/HEAD, This is a txt file.
+3. By going to .git/refs/heads, In this folder the branches are listed and when we open each branch txt file, It has ever commits' unique hash ID.
