@@ -24,6 +24,12 @@ Git is used for taking history of changes of our code. It also helps us for coll
 	**code is command to open VS Code, And code \<file\> will create 'file' if not existed and open up the 'file' with VS Code.**  
 	**Git open up code editor, When you did not type message while committing and when solving conflicts.**
 13. `git branch`:- This command displays the current branch where we are working on.
+14. `git branch 'Branch Name'`:- This command creates a new branch with the given name.
+15. `git switch 'Branch Name'`:- This command will take the user from current branch to the branch you typed.
+16. `git switch -c <branch name>`:- This command will both create and switch to new branch.
+	If branch already exists, Above command will only switch to it.
+17. `git checkout <Branch Name>`:- This command will also switch to given branch. But this command has multi-purpose like restore etc.
+18. `git merge <branch name>`:- This command will merge the \<branch name\> commits(changes) to the current branch.
 # Terminologies
 1. Repositories :- Same meaning as folder or directory, Specifically where we store our code.
 2. Git Repositories :- A repo which have .git(files/folders starting with . are hidden) folder inside it, is called a Git Repositories.
@@ -41,3 +47,14 @@ The head is a pointer which points towards the current branch on which we are wo
 1. By `git branch` command.
 2. By going to .git/HEAD, This is a txt file.
 3. By going to .git/refs/heads, In this folder the branches are listed and when we open each branch txt file, It has ever commits' unique hash ID.
+# Branches
+We can create multiple branches in a git repository. When we create a branch, The newly created branch will have all the files and folder of the current branch. After that when we do some changes in a branch, Nothing will be changed in other branches until we merge two or more branches.
+# Merge
+Two or more branches can be merged with `git merge <branch name>` command.  
+Merge will bring all the work of a branch which is typed with `git merge` to the branch user is currently at. But the branch which is being merge is not deleted, It stays same.  
+Sometimes merge will create conflicts which comes when both branch will have different new commits in a same file.
+**There are two types of merges.**
+1. Fast-forward merge :- When one branch does not have any new commits after creation/merge to the other branch and only the other branch have new commits and In that other branch, There is no deletions in any commits. Then if when we merge that other branch to the current branch, There will be no conflicts.
+2. Non fast-forward merge :-
+	1. When we work on two or more branches simultaneously, But not in same file. Then if we merge those branches there will be no conflicts but Git will ask for a message to merge those branches and we will also get an extra commit.
+	2. This time we work in same file from different branches. When merging those branches, We will get conflicts and we need to resolve those.
